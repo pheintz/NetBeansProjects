@@ -13,6 +13,8 @@ import java.util.Scanner;
  */
 public class MenuDriver {
     
+    Scanner inputScanner;
+    
     String intro;
     String select;
     String selected;
@@ -24,9 +26,9 @@ public class MenuDriver {
     
     MenuDriver()
     {
-        Scanner inputScanner = new Scanner(System.in);
+        inputScanner = new Scanner(System.in);
         
-    intro = "Welcome to the IMF trading game.  You will start with money to "
+        intro = "Welcome to the IMF trading game.  You will start with money to "
             + "buy goods and commodities (things to sell) from one of the "
             + "continents. As you play, you will discover that there is another "
             + "commodity that you can't buy because of trade barriers. "
@@ -34,20 +36,24 @@ public class MenuDriver {
             + "and international trade would be far more limited.\n\n";
     
     
-    selected = "You can purchase the following goods\n";
-    askTrade = inputScanner.next("Would you like to trade with this")
-    
-    
-    
+        selected = "You can purchase the following goods\n";
     }
     
-    int getLeader()
+    String getLeader(GameData myGame)
     {
-        select = inputScanner.next("Select a trader you would like to trade with: ");
+        System.out.print(myGame.africa.name);
+        
+        String selected = inputScanner.next("Type the country of a trader "
+                + "you would like to trade with(case sensitive): ");
+        
+        return selected;
     }
     
     void tradeWithLeader(Trader selected)
     {
+        // "leader has the following available for trade)
+        // print list
+        // give action options
         
     }
     

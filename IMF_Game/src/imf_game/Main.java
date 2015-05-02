@@ -10,7 +10,14 @@ package imf_game;
  * @author Lloyd
  */
 public class Main {
+        GameData newGame = new GameData();
 
+    
+        final int northAmerica = 1;
+        final int southAmerica = 2;
+        final int asia = 3;
+        final int austrailia = 4;
+        final int africa = 5;
     /**
      * @param args the command line arguments
      */
