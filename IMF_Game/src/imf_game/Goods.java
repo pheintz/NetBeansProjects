@@ -17,12 +17,16 @@ public class Goods {
     String name;
     
     /** Quantity of good */
-    int amount;
+    int quantity;
     
-    Goods(String n)
+    /** Measuring Units */
+    String units;
+    
+    Goods(String n, String u)
     {
         name = n;
-        amount = 0;
+        units = u;
+        quantity = 0;
     }
     
 }

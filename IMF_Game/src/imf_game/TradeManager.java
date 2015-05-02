@@ -24,11 +24,22 @@ public class TradeManager {
         int price = 0;
         return price;
     }
-    void trade(Trader buyer, Trader seller, String good, int price)
+    
+    /**
+     * 
+     * @param buyer is the trader purchasing
+     * @param seller is the trader selling
+     * @param good, the name of the product
+     * @param price, amount agreed to be paid
+     * @param amount, Quantity
+     */
+    
+    void trade(Trader buyer, Trader seller, String good, int price, int amount)
     {
-        buyer.Money = 
-        
-        
+        buyer.money -= price;
+        seller.money += price;
+        buyer.addAmount(good, amount);
+        seller.subtractAmount(good, amount);
     }
     
     
