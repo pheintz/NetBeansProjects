@@ -9,7 +9,10 @@ import java.util.Scanner;
 
 /**
  *
- * @author Lloyd
+ * @author Patrick Heintz
+ * Menu 
+ * Return values go back to main which directs to
+ * associated functions.
  */
 public class MenuDriver {
     
@@ -17,44 +20,54 @@ public class MenuDriver {
     
     String intro;
     String select;
-    String selected;
+    int selected;
     String askTrade;
-    
-    String tradeOptionOne = "1";
-    String tradeOptionTwo = "2";
-    String tradeOptionThree = "3";
-    
+        
+    /**
+     * Start game menu
+     */
     MenuDriver()
     {
         inputScanner = new Scanner(System.in);
         
-        intro = "Welcome to the IMF trading game.  You will start with money to "
+        System.out.print("Welcome to the IMF trading game.  You will start with money to "
             + "buy goods and commodities (things to sell) from one of the "
             + "continents. As you play, you will discover that there is another "
             + "commodity that you can't buy because of trade barriers. "
             + "Without the IMF, these types of problems would be much more common "
-            + "and international trade would be far more limited.\n\n";
-    
-    
-        selected = "You can purchase the following goods\n";
+            + "and international trade would be far more limited.\n\n");
     }
     
-    String getLeader(GameData myGame)
+    /**
+     * Uses game data to generate world leader information
+     * and then provides menu options.
+     * 
+     * @param myGame
+     * @return int associated with menu choice
+     */
+    int getLeader(GameData myGame)
     {
-        System.out.print(myGame.africa.name);
+        System.out.print("1) " + myGame.africa.name +", "+ myGame.africa.region + "\n");
+        System.out.print("2) " + myGame.northAmerica.name +", "+ myGame.northAmerica.region + "\n");
+        System.out.print("3) " + myGame.southAmerica.name +", "+ myGame.southAmerica.region + "\n");
+        System.out.print("4) " + myGame.asia.name +", "+ myGame.asia.region + "\n");
+        System.out.print("5) " + myGame.austrailia.name +", "+ myGame.austrailia.region + "\n");
         
-        String selected = inputScanner.next("Type the country of a trader "
-                + "you would like to trade with(case sensitive): ");
-        
+        System.out.print("Type the number of a trader "
+                + "you would like to trade with: ");
+        selected = inputScanner.nextInt();
         return selected;
     }
-    
-    void tradeWithLeader(Trader selected)
+    /**
+     * Base Menu for buy / sell / trade
+     * @return user's choice
+     */
+    int mainPrompt()
     {
-        // "leader has the following available for trade)
-        // print list
-        // give action options
-        
+        System.out.println("Would you like to\n\t0) Quit. \n\t1) Buy \n\t2) Sell "
+                + "\n\t3) View My Info \n\n\t");
+        selected = inputScanner.nextInt();
+        return selected;
     }
     
 }

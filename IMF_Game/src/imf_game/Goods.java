@@ -19,13 +19,17 @@ public class Goods {
     /** Quantity of good */
     int quantity;
     
+    /** market value */
+    int marketValue;
+    
     /** Measuring Units */
     String units;
     
-    Goods(String n, String u)
+    Goods(String n, String u, int mark)
     {
         name = n;
         units = u;
+        marketValue = mark;
         quantity = 0;
     }
     

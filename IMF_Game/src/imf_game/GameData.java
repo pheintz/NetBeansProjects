@@ -13,7 +13,7 @@ package imf_game;
 public class GameData {
     
     /** trading regions */
-    Trader europe;
+    Trader player;
     Trader africa;
     Trader asia;
     Trader austrailia;
@@ -21,31 +21,35 @@ public class GameData {
     Trader southAmerica;
 
     /** market prices */
-    int cheese = 250;
-    int fish = 1000;
-    int shoes = 400;
-    int cocoa = 100;
-    int cotton = 400;
-    int gold = 250;
-    int rice = 300;
-    int rubber = 500;
-    int steel = 450;
-    int aluminium = 500;
-    int coal = 250;
-    int wool = 200;
-    int beef = 545;
-    int lumber = 200;
-    int wheat = 125;
-    int bananas = 225;
-    int coffee = 350;
-    int oil = 500;
+    static final int cheese = 250;
+    static final int fish = 1000;
+    static final int shoes = 400;
+    static final int cocoa = 100;
+    static final int cotton = 400;
+    static final int gold = 250;
+    static final int rice = 300;
+    static final int rubber = 500;
+    static final int steel = 450;
+    static final int aluminium = 500;
+    static final int coal = 250;
+    static final int wool = 200;
+    static final int beef = 545;
+    static final int lumber = 200;
+    static final int wheat = 125;
+    static final int bananas = 225;
+    static final int coffee = 350;
+    static final int oil = 500;
     
+    
+    /**
+     * Populate game data
+     */
     GameData()
     {
-        europe = new Trader("Sophie", "Europe", 9000);
-        europe.addAmount("Cheese", 1000);
-        europe.addAmount("Fish", 2500);
-        europe.addAmount("Shoes", 200);
+        player = new Trader("Sophie", "Europe", 9000);
+        player.addAmount("Cheese", 1000);
+        player.addAmount("Fish", 2500);
+        player.addAmount("Shoes", 200);
         
         africa = new Trader("Neema", "Africa", 9000);
         africa.addAmount("Cotton", 1500);
